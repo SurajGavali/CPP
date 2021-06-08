@@ -5,6 +5,14 @@
 #include<limits>//for the ignore function
 #include<vector>
 
+/*
+    Tempatized array(STL stanadard template library)
+
+    -statically sized
+    -when passed to the function remembers the length
+    -passed by value(copied)
+ */
+
 //For clering the junk in cin 
 //std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
 
