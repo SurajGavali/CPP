@@ -59,5 +59,17 @@ int main(){
     }while(password != match_p);
 
     std::cout << "Logged in successfully!\n";
+
+    //Range based for loop
+    //makes too easier for iterating over all the elements in the collection such as vector ;)
+
+    int r_data[] = {1,2,3,4,5,6};
+
+    for(int r : r_data){
+        std::cout << r << "\t";
+    }
+
+
+
     return 0;
 }
