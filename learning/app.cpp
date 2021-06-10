@@ -17,6 +17,34 @@
 //For clering the junk in cin 
 //std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
 
+void save_score(int guess_count){
+    std::ifstream input;
+
+    //std::string filename;
+    input.open("bestscore.txt");
+
+    if(!input.is_open()){
+        std::cout << "Soomething went wrong please try again!\n";
+    }
+    int bestScore;
+    input >> bestScore;
+
+    std::ofstream output;
+    output.open("bestscore.txt");
+
+    if(!output.is_open()){
+        std::cout << "Soomething went wrong please try again!\n";
+    }
+    if(guess_count < bestScore){
+
+        output << guess_count;
+    }
+    else{
+
+        output << bestScore;
+    }
+}
+
 //using array print_array(int array[],int size)
 void print_vector(std::vector<int> vector){
 
@@ -54,33 +82,7 @@ void start_game(){
             std::cout << "Number enteerd was ti high\n";
         }
     }
-
-    std::ifstream input;
-
-    std::string filename;
-    input.open("bestscore.txt");
-
-    if(!input.is_open()){
-        cout << "Soomething went wrong please try again!\n";
-    }
-    int bestScore;
-    input >> bestScore;
-
-    std::ofstream output;
-    output.open("bestscore.txt");
-
-    if(!output.is_open()){
-        cout << "Soomething went wrong please try again!\n";
-    }
-    if(guesses.size() < bestScore){
-
-        output << guesses.size();
-    }
-    else{
-
-        output << bestScore;
-    }
-
+    save_score(guesses.size());
 
     print_vector(guesses);
     //print_array(guesses,count); //using array
