@@ -4,6 +4,7 @@
 #include<ctime>
 #include<limits>//for the ignore function
 #include<vector>
+#include<fstream>
 
 /*
     Tempatized array(STL stanadard template library)
@@ -50,9 +51,37 @@ void start_game(){
             std::cout << "Ohoo number entered was smaller than actual..\n";
         }
         else{
-            std::cout << "NUmber enteerd was ti high\n";
+            std::cout << "Number enteerd was ti high\n";
         }
     }
+
+    std::ifstream input;
+
+    std::string filename;
+    input.open("bestscore.txt");
+
+    if(!input.is_open()){
+        cout << "Soomething went wrong please try again!\n";
+    }
+    int bestScore;
+    input >> bestScore;
+
+    std::ofstream output;
+    output.open("bestscore.txt");
+
+    if(!output.is_open()){
+        cout << "Soomething went wrong please try again!\n";
+    }
+    if(guesses.size() < bestScore){
+
+        output << guesses.size();
+    }
+    else{
+
+        output << bestScore;
+    }
+
+
     print_vector(guesses);
     //print_array(guesses,count); //using array
 }
