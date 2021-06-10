@@ -69,7 +69,5 @@ int main(){
         std::cout << r << "\t";
     }
 
-
-
     return 0;
 }
