@@ -19,7 +19,7 @@ int main(){
 
     std::vector<std::vector<int>> vector_array = {{1,2,3},
                                                   {4,5,6},
-                                                  {7,8,9}};;
+                                                  {7,8,9}};
 
     std::cout << "=== Output using vectors ===\n";
     for(int v_row=0; v_row<3;v_row++){
@@ -30,5 +30,5 @@ int main(){
         }
         std::cout << "\n";
     }
-
+    
 }
