@@ -27,7 +27,7 @@ int main(){
                 std::cin >> r.length;
                 std::cout << "Width : ";
                 std::cin >> r.width;
-                std::cout << "Area : " << rectangle_area(r.length,r.width) << std::endl;
+                std::cout << "Area : " << suraj::rectangle_area(r.length,r.width) << std::endl;
                 std::cout << "\n\n";
                 //std::cout << "Area : " << rectangle_area(r) << std::endl; //alternative
                 break;
@@ -37,7 +37,7 @@ int main(){
                 std::cout << "\n\n";
                 std::cout << "Side length : ";
                 std::cin >> r.length;
-                std::cout << "Area : " << rectangle_area(r.length) << std::endl;
+                std::cout << "Area : " << suraj::rectangle_area(r.length) << std::endl;
                 std::cout << "\n\n";
                 break;
             

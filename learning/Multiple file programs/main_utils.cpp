@@ -1,16 +1,19 @@
 #include"main_utils.h"
 
-double rectangle_area(double a, double b){
+namespace suraj{
 
-    return a*b;
-}
+    double rectangle_area(double a, double b){
 
-double rectangle_area(Rectangle rec){
+        return a*b;
+    }
 
-    return rec.length * rec.width;
-}
-//function overloading
-double rectangle_area(double a){
+    double rectangle_area(Rectangle rec){
 
-    return a*a;
+        return rec.length * rec.width;
+    }
+    //function overloading
+    double rectangle_area(double a){
+
+        return a*a;
+    }
 }

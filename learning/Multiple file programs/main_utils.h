@@ -7,8 +7,11 @@ struct Rectangle{
     double width;
 };
 
-double rectangle_area(double a, double b);
-double rectangle_area(Rectangle rec);
-double rectangle_area(double a);
+namespace suraj{
+
+    double rectangle_area(double a, double b);
+    double rectangle_area(Rectangle rec);
+    double rectangle_area(double a);
+}
 
 #endif 
