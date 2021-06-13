@@ -26,7 +26,7 @@ void add_user_if_not(std::vector<User> &users, User user){
 
                 std::cout << "\n\n" << "Hey \"" << user.first_name << " " << user.last_name << "\". " << "You are already registered" << std::endl;
                 return;
-
+                
         }
 
     }
