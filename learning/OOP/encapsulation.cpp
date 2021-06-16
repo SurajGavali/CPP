@@ -10,6 +10,10 @@
 
             1. Access modifiers(private,public,protected)
             2. getters and setters
+
+    Friend function:
+
+        function which is defined outside of the class and we can access the private members of the class by granting th 
  */
 #include<iostream>
 
@@ -56,18 +60,27 @@ class User{
                 this->status = "No status\n";
             }
         }
+
+        friend void output_status(User user);
+        friend std::ostream& operator << (std::ostream &output, User user);
+        friend std::istream& operator >> (std::istream &input,User &user);
 };
+
+void output_status(User user){
+
+    std::cout << user.status;
+}
 
 std::ostream& operator << (std::ostream &output, User user) {
 
-    output << "First Name : " << user.f_name << "\nLast name : " << user.l_name;
+    output << "First Name : " << user.f_name << "\nLast name : " << user.l_name << "\nstatus : " << user.status;
     return output;
 }
 
 std::istream& operator >> (std::istream &input,User &user){
 
     std::cout << "Enter user first name and last name respectively : ";
-    input >> user.f_name >> user.l_name;
+    input >> user.f_name >> user.l_name >> user.status;
 
     return input;
 }
@@ -89,5 +102,9 @@ int main(){
 
     std::cin >> u1;
     std::cout << u1 << std::endl;
+
+    //for accessing the data of private variables
+
+    output_status(u1);
     return 0;
 }
