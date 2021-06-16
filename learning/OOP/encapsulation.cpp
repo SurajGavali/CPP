@@ -34,6 +34,7 @@ class User{
 
             user_count--;
         }
+
         std::string f_name;
         std::string l_name;
 
@@ -57,16 +58,36 @@ class User{
         }
 };
 
+std::ostream& operator << (std::ostream &output, User user) {
+
+    output << "First Name : " << user.f_name << "\nLast name : " << user.l_name;
+    return output;
+}
+
+std::istream& operator >> (std::istream &input,User &user){
+
+    std::cout << "Enter user first name and last name respectively : ";
+    input >> user.f_name >> user.l_name;
+
+    return input;
+}
 int User::user_count = 0; //You have to assign a value to the static members outside of the class
 int main(){
 
     User u1,u2,u3;
 
-    u1.set_status("Model");
+    u1.set_status("Gold");
+    u1.f_name = "Suraj";
+    u1.l_name = "Gavali";
 
     std::cout << u1.get_status() << std::endl;
     std::cout << User::get_user_count() << std::endl;
     u1.~User();
     std::cout << User::get_user_count() << std::endl;
+
+    //for outputing u1 directly we can use operator overloading
+
+    std::cin >> u1;
+    std::cout << u1 << std::endl;
     return 0;
 }
