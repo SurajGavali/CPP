@@ -30,7 +30,7 @@ void swap(T &a, T &b){
 
 //function overloading in template
 
-template<typename T>
+/* template<typename T>
 void swap(T a[], T b[], int size){
 
     for(int i =0; i< size;i++){
@@ -39,7 +39,7 @@ void swap(T a[], T b[], int size){
         a[i] = b[i];
         b[i] = temp;
     }
-}
+} */
 int main(){
 
     int n1 = 5, n2 = 9;
@@ -60,7 +60,7 @@ int main(){
 
     std::cout << "\n\n";
 
-    int arr1[] = {1,1,1,1,1,1};
+    /* int arr1[] = {1,1,1,1,1,1};
     int arr2[] = {2,2,2,2,2,2};
 
     for(int i =0; i<6;i++){
@@ -75,7 +75,7 @@ int main(){
 
         std::cout << "After :  " << arr1[i] << " " << arr2[i] << "\t";
     }
-    std::cout << "\n";
+    std::cout << "\n"; */
 
     return 0;
 }
