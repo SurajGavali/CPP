@@ -5,16 +5,44 @@ using namespace std;
 
 class Solution{
     public:
-        int minRepeats(strig A,string B){
+        int minRepeats(string A,string B){
             //code here
-            int count=0;
+            int c=0,count;
+            vector<char> vA,vB;
+            for(int i=0;i<A.size();i++){
+                vA.push_back(A[i]);
+            }
+            for(int i=0;i<B.size();i++){
+                vB.push_back(B[i]);
+            }
+            for(int i=0;i<B.size();i++){
 
-            do{
-                size_t match = A.find(B);
-                if(match != string::npos){
-                    return count;
+                size_t found = A.find(B[i]);
+                if(found == string::npos){
+                    return -1;
                 }
-            }while();
+                else{
+                    continue;
+                }
+            }
+            if(B == A){
+                count = c;
+            }
+            else{
+                size_t f = A.find(B);
+                do{
+                    if(f != string::npos){
+                        count = c;
+                    }
+                    else{
+                        A = A.append(A);
+                        c++;
+                    }
+                    
+                }while(f != string::npos);
+            }
+
+            return count;
         }
 };
 
@@ -28,7 +56,7 @@ int main(){
         getline(cin,B);
 
         Solution ob;
-        cout << ob.minRepeats() << endl;
+        cout << ob.minRepeats(A,B) << endl;
     }
     return 0;
 }
